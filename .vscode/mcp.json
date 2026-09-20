@@ -1,0 +1,41 @@
+{
+  "servers": {
+    "playwright": {
+      "command": "/Users/x295427/.nvm/versions/node/v24.12.0/bin/node",
+      "args": [
+        "/Users/x295427/dev/IdeaProjects/git/latets/GenAI/AIAutomation/node_modules/@playwright/mcp/cli.js"
+      ],
+      "type": "stdio"
+    },
+    "playwright-test": {
+      "type": "stdio",
+      "command": "/Users/x295427/.nvm/versions/node/v24.12.0/bin/node",
+      "args": [
+        "/Users/x295427/dev/IdeaProjects/git/latets/GenAI/AIAutomation/node_modules/playwright/cli.js",
+        "run-test-mcp-server"
+      ]
+    },
+	 "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${input:github-pat-v2}"
+      }
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "headers": {
+        "Authorization": "Basic c3VkaGFyYW5pbXNjQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjBmZkM0algyejY2T1A4Nmg4b09IWVJNN2xRdmJ2TFFQbXAzQkcwZDNIeUdIQm4xYUJiZDFHck9YMVJvQ2RkOUUtSnFhNndDVTdPa1p5T0VpRzNkN01YUm0wMjA4T1J3RHpTcEhZSTFEMlBHRkJ6dk1sQjNvOGVWNzNKdEJfSWthQTdDWW5SOEw0a2tuWTJnNU84N1N1YnA5TTlrb29wSC05MFJ3blFJVUUyd009NjI5NTU4NTU="
+      }
+    }
+  },
+  "inputs": [
+    {
+      "id": "github-pat-v2",
+      "type": "promptString",
+      "description": "GitHub Personal Access Token (paste without extra spaces/newlines)",
+      "password": true
+    }
+  ]
+}
